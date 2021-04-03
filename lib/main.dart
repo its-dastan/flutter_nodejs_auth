@@ -82,9 +82,9 @@ class _CupertinoTextFieldDemoState extends State<CupertinoTextFieldDemo> {
 }
 
 signup(email, password) async {
-  var url = "http:localhost:3000";
+  var url = "http://127.0.0.1:5000/signup";
   final response = await http.post(
-    Uri.https(url, 'auth'),
+    Uri.https(url, 'user'),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
@@ -93,6 +93,7 @@ signup(email, password) async {
       'password': password,
     }),
   );
+  print(response.body);
 
   if (response.statusCode == 201) {
   } else {
