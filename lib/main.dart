@@ -82,7 +82,8 @@ class _CupertinoTextFieldDemoState extends State<CupertinoTextFieldDemo> {
 }
 
 signup(email, password) async {
-  var url = Uri.parse("http://10.1.23.28:5000/signup");
+  print("in signup function");
+  var url = Uri.parse("http://192.168.43.101:5000/signup");
   final response = await http.post(
     url,
     headers: <String, String>{
